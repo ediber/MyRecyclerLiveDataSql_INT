@@ -1,6 +1,5 @@
 package com.e.myrecyclerlivedatasql_int
 
-import android.app.Application
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -50,9 +49,11 @@ class Fragment0 : Fragment() {
         val addButton = view.findViewById<View>(R.id.button)
         val country = view.findViewById<EditText>(R.id.edit_country)
         val city = view.findViewById<EditText>(R.id.edit_city)
+        val population = view.findViewById<EditText>(R.id.edit_population)
 
         addButton.setOnClickListener(View.OnClickListener {
-            viewModel.add(country.text.toString(), city.text.toString())
+            var popNum = population.text.toString().toInt()
+            viewModel.add(country.text.toString(), city.text.toString(), popNum)
 
         })
 

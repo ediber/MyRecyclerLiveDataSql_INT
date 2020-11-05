@@ -39,6 +39,8 @@ class MyAdapter (): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
         val cityView = holder.city
         cityView.text = country.capital
 
+        holder.population.text = country.population.toString()
+
     }
 
     // total items we want to show
@@ -46,21 +48,12 @@ class MyAdapter (): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
         return countries.size
     }
 
-/*    fun add(name: String, capital: String) {
-        val country = Country(name, capital)
-        countries.add(country)
-
-        // refresh the adapter
-        notifyDataSetChanged()
-    }*/
-
     // itemView is the graphic parent of the row
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val country: TextView = itemView.findViewById(R.id.row_country)
         val city: TextView = itemView.findViewById(R.id.row_city)
+        val population: TextView = itemView.findViewById(R.id.row_population)
 
-        // adding in order to add to it click event
-        val parent: View = itemView.findViewById(R.id.row_parent)
     }
 
 

@@ -18,8 +18,8 @@ class Fragment0ViewModel : ViewModel() {
         countries.value = mutableListOf<Country>()
     }
 
-    fun add(country: String, city: String) {
-        val countryObject = Country(country, city)
+    fun add(country: String, city: String, popNum: Int) {
+        val countryObject = Country(country, city, popNum)
         var lst = countries.value
         lst?.add(countryObject)
 
