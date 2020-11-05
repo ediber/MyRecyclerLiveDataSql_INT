@@ -5,13 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.e.myrecyclerlivedatasql_int.database.CountriesDatabase
+import com.e.myrecyclerlivedatasql_int.database.DatabaseCountry
 
 // adapter get a lambda expression in the constructor
 class MyAdapter (): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
 
     // mutableListOf can be changed, ListOf can not be changed
-   var countries = mutableListOf<Country>()
+   var countries = listOf<DatabaseCountry>()
        set(value) {
            field = value
            notifyDataSetChanged()

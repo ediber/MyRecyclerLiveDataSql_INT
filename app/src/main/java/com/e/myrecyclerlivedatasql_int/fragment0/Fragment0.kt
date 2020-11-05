@@ -1,4 +1,4 @@
-package com.e.myrecyclerlivedatasql_int
+package com.e.myrecyclerlivedatasql_int.fragment0
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -10,6 +10,8 @@ import android.widget.EditText
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.e.myrecyclerlivedatasql_int.MyAdapter
+import com.e.myrecyclerlivedatasql_int.R
 
 class Fragment0 : Fragment() {
 
@@ -32,7 +34,7 @@ class Fragment0 : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(Fragment0ViewModel::class.java)
 
-        viewModel._countries.observe(viewLifecycleOwner, Observer {
+        viewModel.countries.observe(viewLifecycleOwner, Observer {
             adapter.countries = it
         })
     }
